@@ -15,7 +15,7 @@ public class Lick extends PhysicalMove {
 
     @Override
     protected void applyOppEffects(Pokemon p) {
-        if (Math.random() <= 1) {
+        if (Math.random() < 0.3) {
             Effect.paralyze(p);
         }
     }
