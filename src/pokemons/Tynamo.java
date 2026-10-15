@@ -15,6 +15,6 @@ public class Tynamo extends Pokemon {
         setType(Type.ELECTRIC);
         setStats(35, 55, 40, 45, 40, 60);
 
-        setMove(new Tickle());
+        setMove(new Tickle(), new Scratch());
     }
 }
