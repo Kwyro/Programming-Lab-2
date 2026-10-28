@@ -5,23 +5,35 @@ import ru.ifmo.se.pokemon.Type;
 import ru.ifmo.se.pokemon.PhysicalMove;
 import ru.ifmo.se.pokemon.Stat;
 
-public class LeechLife extends PhysicalMove {
+public final class LeechLife extends PhysicalMove {
 
-    // Бьёт и восстанавливает 50%
-    // от нанесённого врагу урона
+    // Восстанавливает половину реально снятого у противника HP
+
+    private double actualDamage;
 
     public LeechLife() {
-        super(Type.BUG, 80, 1);
+        super(Type.BUG, 80, 1.0);
+    }
+
+    @Override
+    protected void applyOppDamage(Pokemon p, double damage) {
+        double hpBefore = Math.max(0, p.getHP());
+        super.applyOppDamage(p, damage);
+        actualDamage = Math.min(hpBefore, hpBefore - p.getHP());
     }
 
     @Override
     protected void applySelfDamage(Pokemon p, double damage) {
-        p.setMod(Stat.HP, (int) (-damage * 0.5));
+        int missingHP = (int) Math.max(0, p.getStat(Stat.HP) - p.getHP());
+        if (actualDamage > 0 && p.isAlive()) {
+            int heal = Math.max(1, (int) Math.round(actualDamage / 2));
+            p.setMod(Stat.HP, -Math.min(heal, missingHP));
+        }
+        actualDamage = 0;
     }
 
     @Override
     protected String describe() {
-        return "использовал Leech Life";
+        return "использует Leech Life";
     }
-    
 }
