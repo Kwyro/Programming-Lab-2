@@ -11,7 +11,7 @@ public class LeechLife extends PhysicalMove {
     // от нанесённого врагу урона
 
     public LeechLife() {
-        super(Type.BUG, 80, 100);
+        super(Type.BUG, 80, 1);
     }
 
     @Override

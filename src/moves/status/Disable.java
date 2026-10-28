@@ -9,7 +9,7 @@ public class Disable extends StatusMove {
     // Предыдущий ход, использованные противником блокируется на 1-8 ходов
     
     public Disable() {
-        super(Type.NORMAL, 0, 100);
+        super(Type.NORMAL, 0, 1);
     }
 
     @Override

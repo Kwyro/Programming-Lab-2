@@ -8,6 +8,6 @@ public class Scratch extends PhysicalMove {
     // Просто урон
 
     public Scratch() {
-        super(Type.NORMAL, 40, 100);
+        super(Type.NORMAL, 40, 1);
     }
 }

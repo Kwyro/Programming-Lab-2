@@ -10,7 +10,7 @@ public class Lick extends PhysicalMove {
     // Наносит дамаг и имеет 30% шанс на парализование
     
     public Lick() {
-        super(Type.GHOST, 30, 100);
+        super(Type.GHOST, 30, 1);
     }
 
     @Override

@@ -11,7 +11,7 @@ public class Tickle extends StatusMove {
     // противника на 1 ступень
 
     public Tickle() {
-        super(Type.NORMAL, 0, 100);
+        super(Type.NORMAL, 0, 1);
     }
 
     @Override

@@ -12,7 +12,7 @@ public class BlastBurn extends SpecialMove {
     // в течение этого и следующего ход
 
     public BlastBurn() {
-        super(Type.FIRE, 150, 90); 
+        super(Type.FIRE, 150, 0.9); 
     }
 
     @Override
