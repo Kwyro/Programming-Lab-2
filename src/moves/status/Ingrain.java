@@ -6,9 +6,11 @@ import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Stat;
 import ru.ifmo.se.pokemon.Effect;
 
-public class Ingrain extends StatusMove {
+public final class Ingrain extends StatusMove {
 
-    // Хилит 1/16 хп от изначального здоровья, пока покемон на поле
+    // Восстанавливает 1/16 максимального HP в конце каждого хода.
+    // Ограничение Pokemon.jar: Effect хранит постоянную величину лечения,
+    // а final-методы не позволяют ограничивать его недостающим HP каждый ход.
     
     private boolean activated = false;
     
@@ -23,14 +25,15 @@ public class Ingrain extends StatusMove {
 
     @Override
     protected void applySelfEffects(Pokemon p) {
-        int heal = Math.max(1, (int) (p.getStat(Stat.HP) / 16));
-        if (!activated) {
-            p.addEffect(new Effect()
-                    .stat(Stat.HP, -heal )
-                    .turns(-1));
-
-            activated = true;
+        if (activated) {
+            return;
         }
+
+        int heal = Math.max(1, (int) (p.getStat(Stat.HP) / 16));
+        p.addEffect(new Effect()
+                .stat(Stat.HP, -heal)
+                .turns(-1));
+        activated = true;
     }
 
     @Override
