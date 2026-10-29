@@ -7,7 +7,6 @@ import ru.ifmo.se.pokemon.Pokemon;
 public final class MagicalLeaf extends SpecialMove {
 
     // Наносит урон и игнорирует изменения точности и уклонения
-    // TODO: Игнорируется Fly
 
     public MagicalLeaf() {
         super(Type.GRASS, 60, 1.0);

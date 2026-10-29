@@ -23,8 +23,6 @@ public class Main {
     public static void main(String[] args) {
         Battle battle = new Battle();
 
-        // Уровни по поколению VII с учётом обычной цепочки эволюции
-
         battle.addAlly(new Eelektross("Спасите", 39)); // Эволюция Eelektrik
         battle.addAlly(new Tyrogue("Тигр", 1));
         battle.addAlly(new Tynamo("Тинамо", 1));

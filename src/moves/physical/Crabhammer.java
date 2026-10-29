@@ -15,7 +15,6 @@ public final class Crabhammer extends PhysicalMove {
     @Override
     protected double calcCriticalHit(Pokemon att, Pokemon def) {
         if (Math.random() < 0.125) {
-            System.out.println("Критический удар!");
             return 2;
         }
         return 1;
