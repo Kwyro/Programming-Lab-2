@@ -10,12 +10,13 @@ public class Fly extends PhysicalMove {
 
     private boolean flying = false;
 
+    // Взлетает, никто не может ударить, а после конца хода приземляется
+    // Реализовал упрощённую логику
+
     public Fly() {
         super(Type.FLYING, 90, 0.95);
     }
 
-    // Pokemon.jar выбирает атаки случайно: удар происходит при следующем
-    // выборе Fly. Уклонение заменяет недоступную в API неуязвимость.
     @Override
     protected boolean checkAccuracy(Pokemon att, Pokemon def) {
         if (!flying) {

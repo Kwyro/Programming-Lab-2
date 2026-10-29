@@ -5,12 +5,12 @@ import ru.ifmo.se.pokemon.Effect;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;
 
-public class Lick extends PhysicalMove {
-    
+public final class Lick extends PhysicalMove {
+
     // Наносит дамаг и имеет 30% шанс на парализование
-    
+
     public Lick() {
-        super(Type.GHOST, 30, 1);
+        super(Type.GHOST, 30, 1.0);
     }
 
     @Override

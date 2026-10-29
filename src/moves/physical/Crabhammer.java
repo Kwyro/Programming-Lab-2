@@ -4,9 +4,9 @@ import ru.ifmo.se.pokemon.Type;
 import ru.ifmo.se.pokemon.PhysicalMove;
 import ru.ifmo.se.pokemon.Pokemon;
 
-public class Crabhammer extends PhysicalMove {
-    
-    // Имеет повышенный шанс крита (1/8 вместо 1/24)
+public final class Crabhammer extends PhysicalMove {
+
+    // Шанс критического удара — 1/8, множитель урона — 2.
 
     public Crabhammer() {
         super(Type.WATER, 100, 0.9);
@@ -15,6 +15,7 @@ public class Crabhammer extends PhysicalMove {
     @Override
     protected double calcCriticalHit(Pokemon att, Pokemon def) {
         if (Math.random() < 0.125) {
+            System.out.println("Критический удар!");
             return 2;
         }
         return 1;
@@ -22,7 +23,6 @@ public class Crabhammer extends PhysicalMove {
 
     @Override
     protected String describe() {
-        return "Использует Crabhammer";
+        return "использует Crabhammer";
     }
 }
-

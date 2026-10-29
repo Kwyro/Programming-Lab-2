@@ -5,13 +5,13 @@ import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.StatusMove;
 import ru.ifmo.se.pokemon.Stat;
 
-public class Tickle extends StatusMove {
+public final class Tickle extends StatusMove {
 
     // Снижает атаку и защиту
     // противника на 1 ступень
 
     public Tickle() {
-        super(Type.NORMAL, 0, 1);
+        super(Type.NORMAL, 0, 1.0);
     }
 
     @Override
@@ -22,6 +22,6 @@ public class Tickle extends StatusMove {
 
     @Override
     protected String describe() {
-        return "использовал Tickle";
+        return "использует Tickle";
     }
 }

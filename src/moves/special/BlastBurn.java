@@ -5,14 +5,14 @@ import ru.ifmo.se.pokemon.Type;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Effect;
 
-public class BlastBurn extends SpecialMove {
+public final class BlastBurn extends SpecialMove {
 
-    // Бьёт и пропускает следующий ход:
+    // Бьёт и пропускает следующий ход
     // Мы должны наносить 0 урона после этого удара
-    // в течение этого и следующего ход
+    // в течение этого и следующего хода
 
     public BlastBurn() {
-        super(Type.FIRE, 150, 0.9); 
+        super(Type.FIRE, 150, 0.9);
     }
 
     @Override

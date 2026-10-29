@@ -8,9 +8,7 @@ import ru.ifmo.se.pokemon.Effect;
 
 public final class Ingrain extends StatusMove {
 
-    // Восстанавливает 1/16 максимального HP в конце каждого хода.
-    // Ограничение Pokemon.jar: Effect хранит постоянную величину лечения,
-    // а final-методы не позволяют ограничивать его недостающим HP каждый ход.
+    // Восстанавливает 1/16 максимального HP в конце каждого хода
     
     private boolean activated = false;
     
