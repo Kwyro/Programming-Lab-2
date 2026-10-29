@@ -6,7 +6,7 @@ import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Stat;
 import ru.ifmo.se.pokemon.Type;
 
-public class Fly extends PhysicalMove {
+public final class Fly extends PhysicalMove {
 
     private boolean flying = false;
 
