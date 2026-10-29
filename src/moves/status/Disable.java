@@ -13,6 +13,7 @@ public final class Disable extends StatusMove {
     // Будем вообще запрещать ему бить всеми атаками
 
     private Effect disabledEffect;
+    private Pokemon disabledPokemon;
 
     public Disable() {
         super(Type.NORMAL, 0, 1);
@@ -20,9 +21,10 @@ public final class Disable extends StatusMove {
 
     @Override
     protected void applyOppEffects(Pokemon p) {
-        if (disabledEffect != null && disabledEffect.attack() == 0) {
+        if (p == disabledPokemon && disabledEffect != null && disabledEffect.attack() == 0) {
             return;
         }
+
         double roll = Math.random();
 
         int turns;
@@ -44,7 +46,8 @@ public final class Disable extends StatusMove {
         } else {
             turns = 8;
         }
-
+        
+        disabledPokemon = p;
         disabledEffect = new Effect().attack(0).turns(turns + 1);
         p.addEffect(disabledEffect);
     }
