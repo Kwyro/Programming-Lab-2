@@ -1,11 +1,10 @@
 package pokemons;
 
+import moves.physical.Lick;
+import moves.special.BlastBurn;
+import moves.status.Disable;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;
-
-import moves.special.*;
-import moves.physical.*;
-import moves.status.*;
 
 public class Tyrogue extends Pokemon {
 
@@ -14,7 +13,6 @@ public class Tyrogue extends Pokemon {
 
         setType(Type.FIGHTING);
         setStats(35, 35, 35, 35, 35, 35);
-
         setMove(new BlastBurn(), new Lick(), new Disable());
     }
 }
